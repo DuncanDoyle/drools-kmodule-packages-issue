@@ -1,0 +1,17 @@
+package org.jboss.ddoyle.drools.rules;
+
+import org.jboss.ddoyle.drools.model.SimpleEvent;
+
+declare SimpleEvent
+	@role (event)
+	@propertyReactive
+end
+
+rule "test-rule"
+when
+	SimpleEvent(id == "bla")
+then
+	System.out.println("First rule fired!");
+end
+
+
